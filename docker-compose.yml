@@ -1,0 +1,19 @@
+version: "3"
+services:
+  ngrok-server:
+    image: jassue/ngrok
+    container_name: ngrok-server
+    environment:
+      - NGROK_DOMAIN="your domain name"
+    volumes:
+      - /data/ngrok:/go/ngrok/bin
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8443:8443"
+    networks:
+      - docker_network
+
+networks:
+  docker_network:
+    driver: bridge
