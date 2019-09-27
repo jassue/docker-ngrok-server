@@ -1,6 +1,6 @@
 # docker-ngrok-server
 
-Docker image of ngrok server,Based on golang1.7-alipine image.
+Docker image of ngrok server,Based on golang1.7-alpine image.
 
 ## Environment variables
 
