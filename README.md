@@ -47,7 +47,7 @@ If you pull the image too slowly, you can also build an ngrok image by cloning t
 #### 2.Running ngrok server container
 
 ~~~
-docker run --name ngrok-server -e NGROK_DOMAIN="your domain name" -p 80:80 -p 443:443 -p 8443:8443 -v /data/ngrok:/go/ngrok/bin -d jassue/ngrok
+docker run --name ngrok-server -e NGROK_DOMAIN="your domain name" -p 80:80 -p 443:443 -p 8022:8022 -p 8443:8443 -v /data/ngrok:/go/ngrok/bin -d jassue/ngrok
 ~~~
 
 It takes some time for the container to compile the server and client, you can check the progress by the following command.
@@ -70,6 +70,10 @@ tunnels:
         subdomain: "test"
         proto:
             http: 80
+    test-ssh:
+        remote_port: 8022
+        proto:
+            tcp: 8022
 ~~~
 
 Start the client
